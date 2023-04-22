@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row flex-column">
+    <% @todays_games.each do |game| %>
+      <div class="prediction-card col-12 text-center p-5">
+        <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{game.home_id}.svg", style: 'height:50px;width:auto' %>
+        versus
+        <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{game.away_id}.svg", style: 'height:50px;width:auto' %>
+      </div>
+    <% end %>
+  </div>
+</div>

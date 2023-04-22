@@ -4,13 +4,14 @@
     <title>HockeyPredictionsFrontend</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body class="container">
+  <body class="container-fluid">
     <%= render partial: 'partials/header' %>
-    <%= yield %>
+    <%= render partial: 'partials/nav' %>
+    <div id="yield">
+      <%= yield %>
+    </div>
   </body>
 </html>

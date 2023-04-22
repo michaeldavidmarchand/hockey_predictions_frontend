@@ -59,3 +59,5 @@ gem "pry-rails", "~> 0.3.9"
 gem "faraday", "~> 2.7"
 
 gem "bootstrap", "~> 5.2"
+
+gem "net-http", "~> 0.3.2"

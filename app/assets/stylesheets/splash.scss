@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  height: calc(100vh);
+
+#image {
+  background-image: url("celly.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  max-width: 200px;
+}
+
+#lower-boxes div {
+  padding: 3rem;
+}
+
+.page-copy div {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }

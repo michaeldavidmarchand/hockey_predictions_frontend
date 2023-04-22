@@ -1,0 +1,17 @@
+// Place all the styles related to the Predictions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prediction-card {
+  border: 1px solid rgb(171, 171, 171);
+  margin: 3em;
+  border-radius: 30px;
+  box-shadow: 0px 4px 15px gray;
+}

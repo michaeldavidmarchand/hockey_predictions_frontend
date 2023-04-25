@@ -4,5 +4,6 @@ class PredictionsController < ApplicationController
   end
 
   def show
+    @game_stats = HockeyDataFacade.new.single_game_stats(params[:id])
   end
 end

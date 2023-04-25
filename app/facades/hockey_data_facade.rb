@@ -7,6 +7,11 @@ class HockeyDataFacade
     end
   end
 
+  def single_game_stats(gamePk)
+    single_game_stats = service.single_game_stats(gamePk)
+    HockeyGame.new(single_game_stats[:data])
+  end
+
   def service
     HockeyDataService.new
   end

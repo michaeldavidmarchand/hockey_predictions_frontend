@@ -126,7 +126,8 @@ This application will be live. Stay tuned.
 
 ## Roadmap
 
-- [ ] establish connection with NHL through a service, and expose the list of games for the current calendar day
+- [x] establish connection with NHL through a service, and expose the list of games for the current calendar day
+- [ ] create a Faraday POST connection to create a user, via the front end, test only
 
 See the [open issues](https://github.com/michaeldavidmarchand/hockey_predictions_frontend/issues) for a full list of proposed features (and known issues).
 

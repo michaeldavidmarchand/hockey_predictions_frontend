@@ -1,2 +1,18 @@
-<h1>Predictions#show</h1>
-<p>Find me in app/views/predictions/show.html.erb</p>
+<div class="row flex-column align-items-center text-center">
+  <h3 class="display-3">predict</h3>
+  <div class="prediction-card col-10 text-center p-3">
+    <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{@game_stats.home_id}.svg", style: 'height:50px;width:auto' %>
+    versus
+    <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{@game_stats.away_id}.svg", style: 'height:50px;width:auto' %>
+  </div>
+</div>
+<div class="row justify-content-center ">
+  <div class="col-4  text-center">
+    <%= form_with() do |f| %>
+      <div>
+        <%= f.select :team, [ @game_stats.home, @game_stats.away ] %>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

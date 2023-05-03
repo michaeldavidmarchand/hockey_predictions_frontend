@@ -1,4 +1,8 @@
 class HockeyDataFacade
+  def add_user_prediction(data)
+    response = service.add_user_prediction(data)
+  end
+
   def todays_games
     todays_games = service.todays_games[:data]
 

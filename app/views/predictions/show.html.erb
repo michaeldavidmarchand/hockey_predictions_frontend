@@ -8,11 +8,12 @@
 </div>
 <div class="row justify-content-center ">
   <div class="col-4  text-center">
-    <%= form_with() do |f| %>
+    <%= form_with(url: user_predictions_path(@current_user.id)) do |f| %>
       <div>
-        <%= f.select :team, [ @game_stats.home, @game_stats.away ] %>
+        <%= f.select :expected_winner, [ @game_stats.home, @game_stats.away ] %>
         <%= f.submit %>
       </div>
+      <%= hidden_field_tag 'gamePk', @game_stats.gamePk %>
     <% end %>
   </div>
 </div>

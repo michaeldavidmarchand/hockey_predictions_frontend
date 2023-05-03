@@ -67,3 +67,7 @@ gem "omniauth-google-oauth2", "~> 1.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 gem "figaro", "~> 1.2"
+
+gem "factory_bot_rails", "~> 6.2"
+
+gem "capybara", "~> 3.39"

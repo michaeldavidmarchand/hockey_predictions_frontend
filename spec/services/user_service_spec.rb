@@ -21,6 +21,10 @@ describe 'user service' do
       expect(@posted_user[:data]).to have_key :id
       expect(@posted_user[:data]).to have_key :type
       expect(@posted_user[:data][:type]).to eq('user')
+
+      expect(@posted_user[:data][:attributes]).to have_key :id
+      expect(@posted_user[:data][:attributes]).to have_key :first_name
+      expect(@posted_user[:data][:attributes][:first_name]).to eq('michael')
     end
   end
 

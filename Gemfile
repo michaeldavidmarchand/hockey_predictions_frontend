@@ -71,3 +71,5 @@ gem "figaro", "~> 1.2"
 gem "factory_bot_rails", "~> 6.2"
 
 gem "capybara", "~> 3.39"
+
+gem "rack_session_access", "~> 0.2.0"

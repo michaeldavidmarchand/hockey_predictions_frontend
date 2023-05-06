@@ -1,1 +1,13 @@
-<h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
+      <div>
+        <h2>total points:</h2>
+        <h2>current rank:</h2>
+        <h2>current predictions:</h2>
+      <%= link_to 'predict games', predictions_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

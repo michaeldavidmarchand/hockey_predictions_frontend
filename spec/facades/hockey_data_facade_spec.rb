@@ -15,4 +15,10 @@ describe 'HockeyDataFacade' do
       expect(hockey_game).to be_a HockeyGame
     end
   end
+
+  context '#add_user_prediction' do
+    it 'returns a user with their prediction added' do
+      # code kere
+    end
+  end
 end

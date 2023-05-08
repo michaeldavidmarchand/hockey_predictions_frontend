@@ -1,0 +1,19 @@
+<div class="row flex-column align-items-center text-center">
+  <h3 class="display-3">EDIT PREDICTION</h3>
+  <div class="prediction-card col-10 text-center p-3">
+    <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{@game_stats.home_id}.svg", style: 'height:50px;width:auto' %>
+    versus
+    <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{@game_stats.away_id}.svg", style: 'height:50px;width:auto' %>
+  </div>
+</div>
+<div class="row justify-content-center ">
+  <div class="col-4  text-center">
+    <%= form_with(url: user_prediction_path(@current_user.id), method: :patch) do |f| %>
+      <div>
+        <%= f.select :expected_winner, [ @game_stats.home, @game_stats.away ] %>
+        <%= f.submit %>
+      </div>
+      <%= hidden_field_tag 'gamePk', @game_stats.gamePk %>
+    <% end %>
+  </div>
+</div>

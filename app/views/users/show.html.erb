@@ -6,7 +6,16 @@
         <h2>total points:</h2>
         <h2>current rank:</h2>
         <h2>current predictions:</h2>
-      <%= link_to 'predict games', predictions_path, class: "btn btn-primary" %>
+        <table class="table">
+          <% @user.predictions.each do |prediction| %>
+            <tr>
+              <td><%= prediction[:expected_winner] %></td>
+              <td><%= link_to 'edit', edit_user_prediction_path(@user.id, prediction[:id], gamePk: prediction[:gamePk]) %></td>
+              <td><%= link_to 'delete', user_prediction_path(@user.id, prediction[:id]), data: {confirm: 'are you sure?'}, method: :delete %></td>
+            </tr>
+          <% end %>
+        </table>
+        <%= link_to 'predict games', predictions_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>

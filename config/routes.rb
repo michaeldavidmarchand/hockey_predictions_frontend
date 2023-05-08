@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get "/auth/google_oauth2/callback", to: "sessions#omniauth"
   resources :predictions, only: %i[index show]
   resources :users, only: %i[show create] do
-    resources :predictions, only: %i[show new create update]
+    resources :predictions, only: %i[show new edit create update destroy]
   end
 end

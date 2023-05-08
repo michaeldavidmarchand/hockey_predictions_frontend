@@ -3,8 +3,8 @@
     <div class="col">
       <h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
       <div>
-        <h2>total points:</h2>
-        <h2>current rank:</h2>
+        <h2>total points: <%= @user.total_points %></h2>
+        <h2>current rank:<%= @user_rank %></h2>
         <h2>current predictions:</h2>
         <table class="table">
           <% @user.predictions.each do |prediction| %>

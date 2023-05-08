@@ -1,4 +1,13 @@
 class UserFacade
+  def all_users
+    service.all_users
+  end
+
+  def find_rank(session_id)
+    all_users = service.all_users
+    all_users[:data].find_index { |x| x[:id] == session_id } + 1
+  end
+
   def update_user_prediction(data)
     service.update_user_prediction(data)
   end

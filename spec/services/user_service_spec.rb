@@ -60,7 +60,25 @@ describe 'user service' do
         expect(prediction).to have_key :gamePk
         expect(prediction).to have_key :expected_winner
       end
+    end
+  end
 
+  describe '#user_predictions' do
+    it 'returns a list of user predictions' do
+      known_user_id = 14
+      response = UserService.new.user_predictions(known_user_id)
+
+      expect(response).to be_a Hash
+      expect(response).to have_key :data
+      expect(response[:data][:attributes][:predictions]).to be_an Array
+
+      response[:data][:attributes][:predictions].each do |prediction|
+        expect(prediction).to be_a Hash
+        expect(prediction).to have_key :id
+        expect(prediction).to have_key :gamePk
+        expect(prediction).to have_key :user_id
+        expect(prediction).to have_key :expected_winner
+      end
     end
   end
 end

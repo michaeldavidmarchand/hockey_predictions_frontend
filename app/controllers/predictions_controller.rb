@@ -29,6 +29,6 @@ class PredictionsController < ApplicationController
   private
 
   def prediction_params
-    params.permit(:expected_winner, :user_id, :gamePk, :id)
+    params.permit(:expected_winner, :user_id, :gamePk, :id, :status)
   end
 end

@@ -14,6 +14,7 @@
         <%= f.submit %>
       </div>
       <%= hidden_field_tag 'gamePk', @game_stats.gamePk %>
+      <%= hidden_field_tag 'status', @game_stats.detailedState %>
     <% end %>
   </div>
 </div>

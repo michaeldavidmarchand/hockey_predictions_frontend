@@ -23,10 +23,6 @@ class UserService
     post_url("/api/v1/users", body)
   end
 
-  def add_user_prediction(body)
-    post_url("/api/v1/users/#{body[:user_id]}/predictions", body)
-  end
-
   def get_url(url, params = nil)
     response = conn.get(url, params)
     JSON.parse(response.body, symbolize_names: true)

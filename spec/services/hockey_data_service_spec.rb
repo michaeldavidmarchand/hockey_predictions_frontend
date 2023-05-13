@@ -46,6 +46,7 @@ describe 'HockeyDataService' do
       expect(stats[:data][:attributes]).to have_key :home_id
       expect(stats[:data][:attributes]).to have_key :away_id
       expect(stats[:data][:attributes]).to have_key :winner
+      expect(stats[:data][:attributes]).to have_key :datetime
     end
   end
 end

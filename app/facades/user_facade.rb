@@ -12,6 +12,10 @@ class UserFacade
     service.update_user_prediction(data)
   end
 
+  def update_user_predictions(user)
+    service.update_user_predictions(user)
+  end
+
   def delete_prediction(user_id, id)
     service.delete_prediction(user_id, id)
   end

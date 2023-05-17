@@ -2,16 +2,20 @@
 <div class="container">
   <div class="row flex-column align-items-center text-center">
     <h3 class="display-3">predict</h3>
-    <% @todays_games.each do |game| %>
-      <% if game.statusCode.to_i <= 2 %>
-        <%= link_to prediction_path(game.gamePk) do %>
-          <div class="prediction-card col-10 text-center p-3">
-            <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{game.home_id}.svg", style: 'height:50px;width:auto' %>
-            versus
-            <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{game.away_id}.svg", style: 'height:50px;width:auto' %>
-          </div>
+    <% if !@todays_games.nil? %>
+      <% @todays_games.each do |game| %>
+        <% if game.statusCode.to_i <= 2 %>
+          <%= link_to prediction_path(game.gamePk) do %>
+            <div class="prediction-card col-10 text-center p-3">
+              <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{game.home_id}.svg", style: 'height:50px;width:auto' %>
+              versus
+              <%= 	image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{game.away_id}.svg", style: 'height:50px;width:auto' %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
+    <% else %>
+      <h3>No games scheduled</h3>
     <% end %>
   </div>
 </div>

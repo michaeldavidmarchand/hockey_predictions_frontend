@@ -13,7 +13,10 @@
       scores
     </div>
     <div>
-      login
+      <% if session[:id].nil? %>
+        login
+      <% else %>
+        <%= link_to 'logout', sessions_logout_path %>
+      <% end %>
     </div>
-  </div>
-</nav>
+  </nav>

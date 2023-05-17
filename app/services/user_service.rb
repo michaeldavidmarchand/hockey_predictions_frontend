@@ -3,6 +3,10 @@ class UserService
     get_url("/api/v1/users")
   end
 
+  def update_user_predictions(user)
+    patch_url("/api/v1/users/#{user.id}/")
+  end
+
   def update_user_prediction(data)
     patch_url("/api/v1/users/#{data[:user_id]}/predictions/#{data[:id]}", data[:expected_winner])
   end

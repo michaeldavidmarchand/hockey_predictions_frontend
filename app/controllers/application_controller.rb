@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
 
     @current_user = UserFacade.new.current_user(session[:id])
   end
+
 end

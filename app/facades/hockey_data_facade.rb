@@ -6,6 +6,8 @@ class HockeyDataFacade
   def todays_games
     todays_games = service.todays_games[:data]
 
+    return if todays_games.nil?
+
     todays_games.map do |game|
       HockeyGame.new(game)
     end

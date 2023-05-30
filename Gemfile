@@ -77,3 +77,5 @@ gem "rack_session_access", "~> 0.2.0"
 gem "vcr", "~> 6.1"
 
 gem "webmock", "~> 3.18"
+
+gem "simplecov", "~> 0.22.0"

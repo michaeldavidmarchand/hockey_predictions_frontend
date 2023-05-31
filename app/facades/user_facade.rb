@@ -1,6 +1,6 @@
 class UserFacade
   def all_users
-    service.all_users
+    service.all_users[:data]
   end
 
   def find_rank(session_id)

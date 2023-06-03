@@ -17,36 +17,20 @@
 @import "bootstrap";
 @import "splash";
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.navbar {
+    margin-bottom: 20px;
 }
 
-header {
-    height: 140px;
-    background-color: #c7c7c7;
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
-nav {
-    height: 40px;
-    background-color: #8ba3ff;
-    margin-left: -.75rem !important;
-    margin-right: -.75rem !important;
-}
-
-#yield {
-  flex-grow: 1;
-}
-
-#links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 3rem;
-  height: 100%;
-}
-
-#links div {
-  padding-right: 1rem;
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
 }

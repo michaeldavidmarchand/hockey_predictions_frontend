@@ -8,10 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="container-fluid">
-    <%= render partial: 'partials/header' %>
+    <% render partial: 'partials/header' %>
     <%= render partial: 'partials/nav' %>
+		 <p class="notice"><%= notice %></p>
     <div id="yield">
       <%= yield %>
     </div>
   </body>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </html>

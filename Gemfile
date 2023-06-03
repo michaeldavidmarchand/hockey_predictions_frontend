@@ -79,3 +79,5 @@ gem "vcr", "~> 6.1"
 gem "webmock", "~> 3.18"
 
 gem "simplecov", "~> 0.22.0"
+
+gem "jquery-rails", "~> 4.5"

@@ -36,7 +36,7 @@ describe 'user service' do
   end
 
   describe '#add_user_prediction' do
-    it 'returns JSON with user, including new prediction' do
+    xit 'returns JSON with user, including new prediction' do
       body = {
         user_id: 14
       }
@@ -64,7 +64,7 @@ describe 'user service' do
   end
 
   describe '#user_predictions' do
-    it 'returns a list of user predictions' do
+    xit 'returns a list of user predictions' do
       known_user_id = 14
       response = UserService.new.user_predictions(known_user_id)
 

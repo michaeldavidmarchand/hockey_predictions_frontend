@@ -4,7 +4,8 @@ class User
               :email,
               :id,
               :predictions,
-              :total_points
+              :total_points,
+              :image
 
   def initialize(data)
     @first_name = data[:data][:attributes][:first_name]
@@ -13,5 +14,6 @@ class User
     @id = data[:data][:id]
     @predictions = data[:data][:attributes][:predictions]
     @total_points = data[:data][:attributes][:total_points]
+    @image = data[:data][:attributes][:image]
   end
 end

@@ -1,4 +1,6 @@
 class PredictionsController < ApplicationController
+  before_action :logged_in?
+
   def index
     @todays_games = HockeyDataFacade.new.todays_games
   end
@@ -27,6 +29,12 @@ class PredictionsController < ApplicationController
   end
 
   private
+
+  def logged_in?
+    return unless session[:id].nil?
+    flash[:notice] = "you must be logged in"
+    redirect_to root_path
+  end
 
   def prediction_params
     params.permit(:expected_winner, :user_id, :gamePk, :id, :status)

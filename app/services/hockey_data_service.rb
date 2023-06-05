@@ -3,8 +3,8 @@ class HockeyDataService
     post_url("/api/v1/users/#{data[:user_id]}/predictions", data)
   end
 
-  def todays_games
-    get_url("/api/v1/todays_games")
+  def todays_games(date: nil)
+    get_url("/api/v1/todays_games", date)
   end
 
   def single_game_stats(gamePk)

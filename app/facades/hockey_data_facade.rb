@@ -3,8 +3,8 @@ class HockeyDataFacade
     service.add_user_prediction(data)
   end
 
-  def todays_games
-    todays_games = service.todays_games[:data]
+  def todays_games(date: nil)
+    todays_games = service.todays_games(date: date)[:data]
 
     return [] if todays_games.nil?
 

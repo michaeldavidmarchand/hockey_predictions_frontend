@@ -50,7 +50,7 @@ class UserService
   end
 
   def conn
-    Faraday.new(url: "http://localhost:3000") do |faraday|
+    Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
       faraday.headers = { 'Content-Type' => 'application/JSON' }
     end
   end

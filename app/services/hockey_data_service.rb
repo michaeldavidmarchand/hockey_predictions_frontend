@@ -24,7 +24,7 @@ class HockeyDataService
   end
 
   def conn
-    Faraday.new(url: "http://localhost:3000") do |faraday|
+    Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
       # whatever code here
       faraday.headers = { 'Content-Type' => 'application/JSON' }
     end

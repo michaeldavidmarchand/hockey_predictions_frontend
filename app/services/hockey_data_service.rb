@@ -24,9 +24,14 @@ class HockeyDataService
   end
 
   def conn
-    Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
-      # whatever code here
-      faraday.headers = { 'Content-Type' => 'application/JSON' }
+    if Rails.env == 'production'
+      Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
+        faraday.headers = { 'Content-Type' => 'application/JSON' }
+      end
+    else
+      Faraday.new(url: "http://localhost:3000") do |faraday|
+        faraday.headers = { 'Content-Type' => 'application/JSON' }
+      end
     end
   end
 end

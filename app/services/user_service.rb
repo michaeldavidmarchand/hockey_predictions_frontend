@@ -33,7 +33,7 @@ class UserService
   end
 
   def patch_url(url, body = nil)
-    response = conn.patch(url) do |req|
+    conn.patch(url) do |req|
       req.body = { expected_winner: "#{body}" }.to_json
     end
   end
@@ -46,12 +46,18 @@ class UserService
   end
 
   def delete_url(url, _params = nil)
-    response = conn.delete(url)
+    conn.delete(url)
   end
 
   def conn
-    Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
-      faraday.headers = { 'Content-Type' => 'application/JSON' }
+    if Rails.env == 'production'
+      Faraday.new(url: "http://predictions-be.herokuapp.com") do |faraday|
+        faraday.headers = { 'Content-Type' => 'application/JSON' }
+      end
+    else
+      Faraday.new(url: "http://localhost:3000") do |faraday|
+        faraday.headers = { 'Content-Type' => 'application/JSON' }
+      end
     end
   end
 end

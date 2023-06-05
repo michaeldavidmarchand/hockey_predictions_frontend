@@ -4,9 +4,7 @@ class HockeyDataFacade
   end
 
   def todays_games(date: nil)
-    todays_games = service.todays_games(date: date)
-
-    todays_games = todays_games[:data]
+    todays_games = service.todays_games(date: date)[:data]
 
     return [] if todays_games.nil?
 

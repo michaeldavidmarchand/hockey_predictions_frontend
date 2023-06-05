@@ -4,7 +4,7 @@ class HockeyDataService
   end
 
   def todays_games(date: nil)
-    get_url("/api/v1/todays_games", date)
+    get_url("/api/v1/todays_games", [date])
   end
 
   def single_game_stats(gamePk)

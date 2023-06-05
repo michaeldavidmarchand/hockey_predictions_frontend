@@ -2,7 +2,7 @@ class PredictionsController < ApplicationController
   before_action :logged_in?
 
   def index
-    @todays_games = HockeyDataFacade.new.todays_games
+    @todays_games = HockeyDataFacade.new.todays_games(date: Date.today.to_s)
   end
 
   def show

@@ -32,6 +32,7 @@ class PredictionsController < ApplicationController
 
   def logged_in?
     return unless session[:id].nil?
+
     flash[:notice] = "you must be logged in"
     redirect_to root_path
   end

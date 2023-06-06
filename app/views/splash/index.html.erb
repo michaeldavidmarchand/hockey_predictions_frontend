@@ -3,7 +3,7 @@
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">Prediction Game</h1>
     <p class="col-md-8 fs-4">Test your predicting ability by selecting the outcomes of hockey games daily! Earn points for picking the correct team! Rise up the leaderboard and challenge your friends!</p>
-    <button class="btn btn-primary btn-lg" type="button">Example button</button>
+    <%= link_to 'Log in', '/auth/google_oauth2', class: 'btn btn-primary btn-lg', type: 'button', method: :post %>
   </div>
 </div>
 
@@ -17,8 +17,8 @@
   </div>
   <div class="col-md-6">
     <div class="h-100 p-5 bg-light border rounded-3">
-      <h2>Placeholder</h2>
-      <p>Another section that isn't being used at this time</p>
+      <h2>List of Games to Predict</h2>
+      <p>If you're logged in, click here to be taken to the page with </p>
       <button class="btn btn-outline-secondary" type="button">Example button</button>
     </div>
   </div>

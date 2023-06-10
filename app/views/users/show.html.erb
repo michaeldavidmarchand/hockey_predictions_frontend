@@ -1,24 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
-      <div>
-        <h2>total points: <%= @user.total_points %></h2>
-        <h2>current rank:<%= @user_rank %></h2>
-        <h2>current predictions:</h2>
-        <table class="table">
-          <% @user.predictions.each do |prediction| %>
-            <% if prediction[:status] != "Final" %>
-              <tr>
-                <td><%= prediction[:expected_winner] %></td>
-                <td><%= link_to 'edit', edit_user_prediction_path(@user.id, prediction[:id], gamePk: prediction[:gamePk]) %></td>
-                <td><%= link_to 'delete', user_prediction_path(@user.id, prediction[:id]), data: {confirm: 'are you sure?'}, method: :delete %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        </table>
-        <%= link_to 'predict games', predictions_path, class: "btn btn-primary" %>
-      </div>
-    </div>
+<div class="row w-100">
+  <div class="col-sm-12">
+    <h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
+  </div>
+  <div class="col-sm-12 col-md-8 border">
+    <%= link_to 'predict games', predictions_path %>
+  </div>
+  <div class="col-sm-12 col-md-4 border">
+    <h2>total points: <%= @user.total_points %></h2>
+    <h2>current rank:<%= @user_rank %></h2>
+    <h2>current predictions:</h2>
+    <table class="table">
+      <% @user.predictions.each do |prediction| %>
+        <% if prediction[:status] != "Final" %>
+          <tr>
+            <td><%= prediction[:expected_winner] %></td>
+            <td><%= link_to 'edit', edit_user_prediction_path(@user.id, prediction[:id], gamePk: prediction[:gamePk]) %></td>
+            <td><%= link_to 'delete', user_prediction_path(@user.id, prediction[:id]), data: {confirm: 'are you sure?'}, method: :delete %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
   </div>
 </div>

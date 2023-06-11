@@ -1,14 +1,30 @@
 <div class="row w-100">
-  <div class="col-sm-12">
+  <div class="col-sm-12 d-flex justify-content-between">
     <h1><%= "#{@current_user.first_name}'s Dashboard" %></h1>
+    <div><%= link_to 'predict games', predictions_path, class: 'btn btn-primary' %></div>
   </div>
-  <div class="col-sm-12 col-md-8 border">
-    <%= link_to 'predict games', predictions_path %>
+  <div class="col-sm-12 col-md-8 border d-flex justify-content-center align-items-center">
+    Main content area
   </div>
-  <div class="col-sm-12 col-md-4 border">
-    <h2>total points: <%= @user.total_points %></h2>
-    <h2>current rank:<%= @user_rank %></h2>
-    <h2>current predictions:</h2>
+  <div class="col-sm-12 col-md-4 border d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center">
+      <p class="display-6">total points: </p>
+      <p>
+        <%= @user.total_points %>
+      </p>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <p class="display-6">current rank: </p>
+      <p>
+        <%= @user_rank %>
+      </p>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <p class="display-6">predictions: </p>
+      <p>
+        <%= @user.total_points %>
+      </p>
+    </div>
     <table class="table">
       <% @user.predictions.each do |prediction| %>
         <% if prediction[:status] != "Final" %>

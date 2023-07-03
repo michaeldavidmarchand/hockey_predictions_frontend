@@ -6,7 +6,7 @@ RSpec.describe 'Navbar' do
       expect(current_path).to eq("/")
 
       expect(page).to have_content('leaderboard')
-      click_link('leaderboard')
+      click_on "Leaderboard", match: :first
       expect(current_path).to eq leaderboard_index_path
     end
   end

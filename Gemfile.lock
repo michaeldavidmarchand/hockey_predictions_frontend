@@ -282,7 +282,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
-    uri (0.12.1)
+    uri (0.12.2)
     vcr (6.1.0)
     version_gem (1.1.2)
     web-console (3.7.0)
